@@ -1,5 +1,7 @@
 {
   "name": "EcoMove",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

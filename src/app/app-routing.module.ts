@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'home',
@@ -14,6 +18,18 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
+  },
+  {
+    path: 'viajes',
+    loadChildren: () => import('./viajes/viajes.module').then(m => m.ViajesPageModule)
+  },
+  {
+    path: 'map',
+    loadChildren: () => import('./map/map.module').then(m => m.MapPageModule)
+  },
+  {
+    path: '**',
+    redirectTo: ''
   }
 ];
 
@@ -23,4 +39,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

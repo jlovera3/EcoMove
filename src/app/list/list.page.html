@@ -11,8 +11,9 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
+    <ion-item *ngFor="let item of items"> 
+      <ion-img class="patinete" src="../../assets/patinete.png">
+      </ion-img>   
       {{item.title}}
       <div class="item-note" slot="end">
         {{item.note}}

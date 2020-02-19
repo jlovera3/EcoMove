@@ -1,4 +1,23 @@
-.welcome-card img {
+.welcome-card {
   max-height: 35vh;
   overflow: hidden;
+  background-color:#76BA1B;
+}
+.patinete{
+  block-size: 20px;   
+}
+.titulo{
+  display:inline-block;
+  font-size: 1.5em;
+  text-align: right;
+  line-height: 1.22;
+  float:left;
+  vertical-align:bottom;
+}
+.image{
+  display:inline-block;
+  padding: .2em;
+  line-height: 1.22;
+  float:left;
+  vertical-align:bottom;
 }
