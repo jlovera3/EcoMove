@@ -6,6 +6,7 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'login',
@@ -13,19 +14,23 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'list',
-    loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
+    loadChildren: () => import('./list/list.module').then(m => m.ListPageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'viajes',
-    loadChildren: () => import('./viajes/viajes.module').then(m => m.ViajesPageModule)
+    loadChildren: () => import('./viajes/viajes.module').then(m => m.ViajesPageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'map',
-    loadChildren: () => import('./map/map.module').then(m => m.MapPageModule)
+    loadChildren: () => import('./map/map.module').then(m => m.MapPageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: '**',
