@@ -1,36 +1,33 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AuthGuardService } from './services/auth-guard.service';
+//import { AuthGuardService } from './services/auth-guard.service';
+//import { AuthService } from './services/auth.service';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
-    canActivate: [AuthGuardService]
-  },
-  {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
+    redirectTo: 'home',
+    pathMatch: 'full'
   },
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
-    canActivate: [AuthGuardService]
+    //canActivate: [AuthGuardService]
   },
   {
     path: 'list',
     loadChildren: () => import('./list/list.module').then(m => m.ListPageModule),
-    canActivate: [AuthGuardService]
+    //canActivate: [AuthGuardService]
   },
   {
     path: 'viajes',
     loadChildren: () => import('./viajes/viajes.module').then(m => m.ViajesPageModule),
-    canActivate: [AuthGuardService]
+    //canActivate: [AuthGuardService]
   },
   {
     path: 'map',
     loadChildren: () => import('./map/map.module').then(m => m.MapPageModule),
-    canActivate: [AuthGuardService]
+    //canActivate: [AuthGuardService]
   },
   {
     path: '**',
@@ -44,4 +41,16 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  constructor() { }
+
+  ngOnInit() { }
+
+  /*check(): boolean {
+    if (this.auth.isAuthenticated) {
+      return true;
+    } else {
+      return false;
+    }
+  }*/
+}

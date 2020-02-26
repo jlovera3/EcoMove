@@ -7,7 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Globalization } from '@ionic-native/globalization/ngx';
 
 import { TranslateService } from '@ngx-translate/core';
-import { AuthService } from './services/auth.service';
+//import { AuthService } from './services/auth.service';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
@@ -36,6 +36,11 @@ export class AppComponent {
       title: 'Mis Viajes',
       url: '/viajes',
       icon: 'map'
+    },
+    {
+      title: 'Perfil (No funciona)',
+      url: '/profile',
+      icon: 'body'
     }
   ];
 
@@ -45,7 +50,7 @@ export class AppComponent {
     private statusBar: StatusBar,
     private global: Globalization,
     private translate:TranslateService,
-    private auth:AuthService,
+    //private auth:AuthService,
     private router:Router
   ) {
     this.initializeApp();
@@ -63,18 +68,21 @@ export class AppComponent {
         }
       })
       .catch(err=>this.translate.use('en'));
-      await this.auth.checkSession();
-      /**he comprobado si puedes o no ir a login */
+      console.log("Hola");
+      /*await this.auth.checkSession();
+
       if(this.auth.isAuthenticated()){
         this.router.events.subscribe(event=>{
           if(event instanceof NavigationEnd){
             if(this.router.url==='/' 
             || this.router.url==='/login'){
-              this.router.navigate(['/tabs']);
+              console.log("Hola1");
+              this.router.navigate(['/login']);
             }
           }
         })
       }
+      console.log("Hola2");*/
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });

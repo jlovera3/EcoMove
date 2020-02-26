@@ -24,6 +24,7 @@ export class UiComponent implements OnInit {
       await this.loading.dismiss();
     }
     this.loading=null;
+    this.loading.dismiss();
   }
 
 }

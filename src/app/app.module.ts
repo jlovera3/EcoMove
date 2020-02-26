@@ -12,8 +12,8 @@ import { Globalization } from '@ionic-native/globalization/ngx';
 import { HttpClient, HttpClientModule } from '@angular/common/http'
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
-import { AuthGuardService } from './services/auth-guard.service';
-import { AuthService } from './services/auth.service';
+//import { AuthGuardService } from './services/auth-guard.service';
+//import { AuthService } from './services/auth.service';
 import { NativeStorage} from '@ionic-native/native-storage/ngx';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { UiComponent } from './common/ui/ui.component';
@@ -23,6 +23,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Camera } from '@ionic-native/camera/ngx';
+import { PhotoLibrary } from '@ionic-native/photo-library/ngx';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -51,14 +53,16 @@ export function HttpLoaderFactory(http: HttpClient) {
     GooglePlus,
     UiComponent,
     NativeStorage,
-    AuthGuardService,
-    AuthService,
+    //AuthGuardService,
+    //AuthService,
     TranslateService,
     HttpClient,
     Globalization,
     StatusBar,
     Geolocation,
     SplashScreen,
+    Camera,
+    PhotoLibrary,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
